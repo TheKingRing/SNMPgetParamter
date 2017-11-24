@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="grammatica-bin-1.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/greendaogenerator/libs/grammatica-bin-1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

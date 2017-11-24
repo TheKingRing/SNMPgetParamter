@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="netrefresh" type="id" />
+    <item name="trapset" type="id" />
+    <item name="broadcastSet" type="id" />
+    <item name="begain" type="id">1</item>
+    <item name="configure" type="id">2</item>
+    <item name="finished" type="id">3</item>
+    <item name="setSucceed" type="id">4</item>
+    <item name="trapRefresh" type="id" />
+    <item name="trapbtset" type="id" />
+    <item name="ipchange" type="id" />
+    <item name="broadcastrefresh" type="id" />
+    <item name="asiOutrefresh" type="id" />
+    <item name="dvbcrefresh" type="id" />
+    <item name="dvbsrefresh" type="id" />
+    <item name="current_programme" type="id" />
+    <item name="inputStream_change" type="id" />
+    <item name="serachchaged" type="id" />
+    <item name="maskerror" type="id" />
+    <item name="trapMessageGet" type="id" />
+    <item name="trapMessageInit" type="id" />
+    <item name="clear_stop" type="id" />
+    <item name="ip_check_finished" type="id" />
+    <item name="ip_being_used" type="id" />
+    <item name="ipchanged" type="id" />
+    <item name="changed" type="id" />
+    <item name="OK" type="id" />
+    <item name="stop" type="id" />
+    <item name="disMatch" type="id" />
+    <item name="noresponse" type="id" />
+    <item name="empty" type="id" />
+</resources>

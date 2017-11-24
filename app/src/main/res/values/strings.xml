@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">circle_loop</string>
+    <string name="title_result">Result</string>
+    <string name="title_oidlist">OIDList</string>
+    <string name="target_host">Target Host : </string>
+    <string name="target_port">Target Port : </string>
+    <string name="snmp_version">SNMP Version : </string>
+    <string name="community_string">Community : </string>
+    <string name="timeout">Timeout : </string>
+    <string name="default_timeout">5</string>
+    <string name="default_retries">0</string>
+    <string name="retries">Retries : </string>
+    <string name="oid">OID : </string>
+    <string name="get_button">SNMP Get</string>
+    <string name="add_oid_button">Add OID</string>
+    <string name="chooseVersion">Choose a version</string>
+    <string name="host_hint">Target Host</string>
+    <string name="port_hint">161</string>
+    <string name="add_oid">OID : </string>
+    <string name="add_button">Add</string>
+    <string name="list_oids_button">List</string>
+    <string name="close_button">Close</string>
+    <string name="delete_button">Delete</string>
+    <string name="dvb_c">DVB-C参数设置</string>
+    <string name="refresh">refresh</string>
+    <string name="enable_interactive_mode">enable_interactive_mode</string>
+    <string name="disable_interactive_mode">disable_interactive_mode</string>
+    <string name="dvb_s">DVB-S参数设置</string>
+    <string name="validate">刷新</string>
+    <string name="set">设置</string>
+    <string name="asi">ASI基本设置</string>
+    <string name="asiout">ASI环出</string>
+    <string name="ip_asi">码率（Kbps）：</string>
+    <string name="rate">码率</string>
+    <string name="frequency">频点频率（KHz）：</string>
+    <string name="kbaud">符号率（KBaud）：</string>
+    <string name="ajust_model">调制模式：</string>
+    <string name="frequency_reserve">频谱反转：</string>
+    <string name="j_83">J.83附录：</string>
+    <string name="down_frequecy">下行频率（MHz）：</string>
+    <string name="own_frequecy">本振频率（MHz）：</string>
+    <string name="_0">0</string>
+    <string name="polorization">极化方式：</string>
+    <string name="dvb_s_22k">DVB-S 22K：</string>
+    <string name="ds3_e3">DS3/E3参数设置</string>
+    <string name="trap">Trap发送间隔：</string>
+    <string name="trap2_addr">Trap2接收地址：</string>
+    <string name="trap1_addr">Trap1接收地址：</string>
+    <string name="snmp_trap">SNMP trap参数设置</string>
+    <string name="internet_gate">Internet Gate:</string>
+    <string name="subnet_mask">子网掩码</string>
+    <string name="ip_address">IP Address:</string>
+    <string name="mac_address">Mac Address:</string>
+    <string name="Internet_set">网络配置</string>
+    <string name="port">端口：</string>
+    <string name="broad_cast">组播地址：</string>
+    <string name="search">search</string>
+    <string name="Refresh">Refresh</string>
+    <string name="input_stream">Input Stream:</string>
+    <string name="volume">Volume:</string>
+
+
+</resources>

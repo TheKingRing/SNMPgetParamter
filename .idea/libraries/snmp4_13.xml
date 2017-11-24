@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="snmp4_13">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/greendaogenerator/libs/snmp4_13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

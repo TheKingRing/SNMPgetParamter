@@ -1,0 +1,669 @@
+DE200-MIB DEFINITIONS ::=BEGIN
+IMPORTS
+MODULE-IDENTITY, OBJECT-IDENTITY,
+enterprises, OBJECT-TYPE               FROM SNMPv2-SMI
+DisplayString                          FROM SNMPv2-TC;
+
+de200								MODULE-IDENTITY
+										LAST-UPDATED		"201009090000Z"
+										ORGANIZATION		"Circloop Co.,Ltd."
+										CONTACT-INFO
+																		"Circloop Inc.
+																		Room801,Building 3B, Tianzhao garden, NO.41, Xizhimen north street, Haidian district, Beijing, China. 100044
+																		http://www.circloop.com.cn
+																		circloop@vip.163.com
+																		+86-10-62227125"
+										DESCRIPTION
+										"Circloop Co.,Ltd."			
+										::={decoder 1}
+
+CIRCLOOP						OBJECT IDENTIFIER ::={enterprises 33753}
+decoder							OBJECT IDENTIFIER ::={CIRCLOOP 2}
+clpDevInfo					OBJECT IDENTIFIER ::={de200 1}
+
+trapPara						OBJECT IDENTIFIER ::={clpDevInfo 1}
+netPara							OBJECT IDENTIFIER ::={clpDevInfo 2}
+versionPara					OBJECT IDENTIFIER ::={clpDevInfo 3}
+inputExistPara			OBJECT IDENTIFIER ::={clpDevInfo 4} 
+decoder1Para				OBJECT IDENTIFIER ::={clpDevInfo 5}
+decoder2Para				OBJECT IDENTIFIER ::={clpDevInfo 6}
+ipreceivePara				OBJECT IDENTIFIER ::={clpDevInfo 7}
+dvbcPara						OBJECT IDENTIFIER	::={clpDevInfo 10}
+dvbsPara						OBJECT IDENTIFIER ::={clpDevInfo 11}
+ds3e3Para						OBJECT IDENTIFIER ::={clpDevInfo 12}
+
+--trapPara
+trapAddress1				OBJECT-TYPE
+										SYNTAX DisplayString
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION
+										"trap Address of the device to send to"
+										::={trapPara 1}
+										
+trapEnable1					OBJECT-TYPE
+										SYNTAX INTEGER{
+											disable(0),
+											enable(1)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION
+										"trap Address enable or disable"
+										::={trapPara 2}
+										
+trapAddr1Version		OBJECT-TYPE
+										SYNTAX INTEGER{
+											v1(0),
+											v2c(1)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION
+										"trap version for Address 1"
+										::={trapPara 3}
+										
+trapAddress2      	OBJECT-TYPE
+                  	SYNTAX DisplayString
+                  	ACCESS read-write
+                  	STATUS current
+                  	DESCRIPTION
+                  	"trap Address of the device to send to"
+                  	::={trapPara 4}
+
+trapEnable2       	OBJECT-TYPE
+                  	SYNTAX INTEGER{
+                  		disable(0),
+                    	enable(1)
+                   	}
+                  	ACCESS read-write
+                  	STATUS current
+                  	DESCRIPTION
+                  	"trap Address enable or disable"
+                  	::={trapPara 5}
+
+trapAddr2Version  	OBJECT-TYPE
+                  	SYNTAX INTEGER{
+                    	v1(0),
+                    	v2c(1)
+                   	}
+                  	ACCESS read-write
+                  	STATUS current
+                  	DESCRIPTION
+                  	"trap version for Address 1"
+                  	::={trapPara 6}
+                  	
+trapInterval				OBJECT-TYPE
+										SYNTAX INTEGER
+										ACCESS read-write 
+										STATUS current
+										DESCRIPTION
+										"trap interval, unit: second"
+										::={trapPara 7}
+										
+										
+										
+--netPara
+ipAddr							OBJECT-TYPE
+										SYNTAX DisplayString
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION
+										"IP address of device"
+										::={netPara 1}
+										
+maskAddr						OBJECT-TYPE
+										SYNTAX DisplayString
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION
+										"netmask of device"
+										::={netPara 2}
+										
+gateAddr						OBJECT-TYPE
+										SYNTAX DisplayString
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION              	
+										"gateway of device"
+										::={netPara 3}
+										
+macAddr							OBJECT-TYPE
+										SYNTAX DisplayString
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION
+										"MAC addr of device"
+										::={netPara 4}
+										
+
+--versionPara
+armVersion					OBJECT-TYPE
+										SYNTAX DisplayString
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION
+										"ARM version of the devixe"
+										::={versionPara 1}
+										
+decoderVersion			OBJECT-TYPE
+										SYNTAX DisplayString
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION
+										"decoder version of the device"
+										::={versionPara 2}
+										
+mcVersion						OBJECT-TYPE
+										SYNTAX DisplayString
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION
+										"MC version of the device"
+										::={versionPara 3}
+
+--inputExistPara
+asi1Exist						OBJECT-TYPE
+										SYNTAX INTEGER{
+											asi1notexist(-1),
+											asi1notlock(0),
+											asi1locked(1)
+										}
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION "ASI1 input exist info"
+										::={inputExistPara 1}
+										
+asi2Exist						OBJECT-TYPE
+										SYNTAX INTEGER{
+											asi2notexist(-1),
+											asi2notlock(0),
+											asi2locked(1)
+										}
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION "ASI2 input exist info"
+										::={inputExistPara 2}
+										
+ds3e3Exist					OBJECT-TYPE
+										SYNTAX INTEGER{
+											ds3e3notexist(-1),
+											ds3e3notlock(0),
+											ds3e3locked(1)
+										}
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION "DS3/E3 input exist info"
+										::={inputExistPara 3}
+										
+dvbcExist						OBJECT-TYPE
+										SYNTAX INTEGER{
+											dvbcnotexist(-1),
+											dvbcnotlock(0),
+											dvbclocked(1)
+										}
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION "DVB-C input exist info"
+										::={inputExistPara 4}
+										
+dvbsExist						OBJECT-TYPE
+										SYNTAX INTEGER{
+											dvbsnotexist(-1),
+											dvbsnotlock(0),
+											dvbslocked(1)
+										}
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION "DVB-S input exist info"
+										::={inputExistPara 5}
+										
+ipExist							OBJECT-TYPE
+										SYNTAX INTEGER{
+											ipnotexist(-1),
+											ipnotlock(0),
+											iplocked(1)
+										}
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION "IP input exist info"
+										::={inputExistPara 6}
+										
+e14Exist						OBJECT-TYPE
+										SYNTAX INTEGER{
+											e14notexist(-1),
+											e14notlock(0),
+											e14locked(1)
+										}
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION "E1*4 input exist info"
+										::={inputExistPara 7}																																								
+
+--decoder1Para
+D1existflag						OBJECT-TYPE
+										SYNTAX INTEGER{
+											decoder1notexist(0),
+											decoder1exist(1)
+										}
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION "Decoder 1 exist info"
+										::={decoder1Para 1}
+										
+D1inputchoose					OBJECT-TYPE
+										SYNTAX INTEGER{
+											asi1(1),
+											asi2(2),
+											ds3e3(3),
+											dvb-c(4),
+											dvb-s(5),
+											ip(6),
+											e14(7)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 1 input source select"
+										::={decoder1Para 2}
+
+D1pcrpid							OBJECT-TYPE
+										SYNTAX INTEGER(0..8191)
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 1 PCR PID"
+										::={decoder1Para 3}
+										
+D1videopid						OBJECT-TYPE
+										SYNTAX INTEGER(0..8191)
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 1 Video PID"
+										::={decoder1Para 4}
+										
+D1audiopid						OBJECT-TYPE
+										SYNTAX INTEGER(0..8191)
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 1 Audio PID"
+										::={decoder1Para 5}
+										
+D1volume							OBJECT-TYPE
+										SYNTAX INTEGER(0..26)
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 1 volume"
+										::={decoder1Para 6}
+
+D1currentprogram			OBJECT-TYPE
+										SYNTAX INTEGER(0..253)
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 1 current program"
+										::={decoder1Para 7}
+
+D1searchEnable			OBJECT-TYPE
+										SYNTAX INTEGER{
+											normal(0),
+											search(1)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 1 search"
+										::={decoder1Para 8}
+										
+D1lockstatus					OBJECT-TYPE
+										SYNTAX INTEGER{
+											unlock(0),
+											lock(1)
+										}
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION "Decoder 1 locked status"
+										::={decoder1Para 9}
+										
+decoder1InfoTable		OBJECT-TYPE
+										SYNTAX SEQUENCE OF Decoder1InfoEntry
+										ACCESS not-accessible
+										STATUS current
+										DESCRIPTION
+										"The table of the program infomation, column 1 for the program number, column 2 for the program name"
+										::={decoder1Para 10}
+										
+decoder1InfoEntry		OBJECT-TYPE
+										SYNTAX Decoder1InfoEntry
+										ACCESS not-accessible
+										STATUS current
+										DESCRIPTION
+										"A row of program info table"
+										INDEX{D1programNumber}													
+										::={decoder1InfoTable 1}
+										
+Decoder1InfoEntry		::=SEQUENCE{
+											D1programNumber			INTEGER (0..253),
+											D1programName				DisplayString
+										}
+										
+D1programNumber				OBJECT-TYPE
+										SYNTAX INTEGER(0..253)
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION
+										"The program number of the input"
+										::={decoder1InfoEntry 1}
+										
+D1programName					OBJECT-TYPE
+										SYNTAX DisplayString	
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION
+										"The program name of the input"
+										::={decoder1InfoEntry 2}
+										
+--decoder2Para
+D2existflag						OBJECT-TYPE
+										SYNTAX INTEGER{
+											decoder2notexist(0),
+											decoder2exist(1)
+										}
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION "Decoder 2 exist info"
+										::={decoder2Para 1}
+									
+D2inputchoose					OBJECT-TYPE
+										SYNTAX INTEGER{
+											asi1(1),
+											asi2(2),
+											ds3e3(3),
+											dvb-c(4),
+											dvb-s(5),
+											ip(6),
+											e14(7)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 2 input source select"
+										::={decoder2Para 2}
+
+D2pcrpid							OBJECT-TYPE
+										SYNTAX INTEGER(0..8191)
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 2 PCR PID"
+										::={decoder2Para 3}
+										
+D2videopid						OBJECT-TYPE
+										SYNTAX INTEGER(0..8191)
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 2 Video PID"
+										::={decoder2Para 4}
+										
+D2audiopid						OBJECT-TYPE
+										SYNTAX INTEGER(0..8191)
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 2 Audio PID"
+										::={decoder2Para 5}
+										
+D2volume							OBJECT-TYPE
+										SYNTAX INTEGER(0..26)
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 2 volume"
+										::={decoder2Para 6}
+
+D2currentprogram			OBJECT-TYPE
+										SYNTAX INTEGER(0..253)
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 2 current program"
+										::={decoder2Para 7}
+
+D2searchEnable			OBJECT-TYPE
+										SYNTAX INTEGER{
+											normal(0),
+											search(1)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "Decoder 2 search flag"
+										::={decoder2Para 8}
+										
+D2lockstatus					OBJECT-TYPE
+										SYNTAX INTEGER{
+											unlock(0),
+											lock(1)
+										}
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION "Decoder 2 locked status"
+										::={decoder2Para 9}
+										
+decoder2InfoTable		OBJECT-TYPE
+										SYNTAX SEQUENCE OF Decoder2InfoEntry
+										ACCESS not-accessible
+										STATUS current
+										DESCRIPTION
+										"The table of the program infomation, column 1 for the program number, column 2 for the program name"
+										::={decoder2Para 10}
+										
+decoder2InfoEntry		OBJECT-TYPE
+										SYNTAX Decoder2InfoEntry
+										ACCESS not-accessible
+										STATUS current
+										DESCRIPTION
+										"A row of program info table"
+										INDEX{D2programNumber}													
+										::={decoder2InfoTable 1}
+										
+Decoder2InfoEntry		::=SEQUENCE{
+											D2programNumber			INTEGER (0..253),
+											D2programName				DisplayString
+										}
+										
+D2programNumber				OBJECT-TYPE
+										SYNTAX INTEGER(0..253)
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION
+										"The program number of the input"
+										::={decoder2InfoEntry 1}
+										
+D2programName					OBJECT-TYPE
+										SYNTAX DisplayString	
+										ACCESS read-only
+										STATUS current
+										DESCRIPTION
+										"The program name of the input"
+										::={decoder2InfoEntry 2}
+
+--ipreceivePara
+multicastAddr				OBJECT-TYPE
+										SYNTAX DisplayString
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "multicast addr of IP input"
+										::={ipreceivePara 1}
+										
+port								OBJECT-TYPE
+										SYNTAX INTEGER
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "port of the IP input"
+										::={ipreceivePara 2}
+
+
+--asiOutputPara
+asiOutputPara				OBJECT-TYPE
+										SYNTAX INTEGER{
+											asi1(1),
+											asi2(2),
+											ds3e3(3),
+											dvb-c(4),
+											dvb-s(5),
+											ip(6),
+											e14(7)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "ASI output's source select"
+										::={clpDevInfo 8}
+										
+										
+--IPToASIPara
+ipToASIPara					OBJECT-TYPE
+										SYNTAX INTEGER
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "IP to ASI rate"
+										::={clpDevInfo 9}
+
+										
+--dvbcPara
+frequency						OBJECT-TYPE
+										SYNTAX INTEGER
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DVB-C frequency"
+										::={dvbcPara 1}
+										
+dvbcSymbolRate					OBJECT-TYPE
+										SYNTAX INTEGER
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DVB-C symbol rate"
+										::={dvbcPara 2}
+										
+constellation				OBJECT-TYPE
+										SYNTAX INTEGER{
+											qam16(1),
+											qam32(2),
+											qam64(3),
+											qam128(4),
+											qam256(5)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DVB-C constellation"
+										::={dvbcPara 3}
+										
+inversion						OBJECT-TYPE
+										SYNTAX INTEGER{
+											off(0),
+											on(1)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DVB-C inversion"
+										::={dvbcPara 4}
+										
+j83Annex						OBJECT-TYPE
+										SYNTAX INTEGER{
+											annexA(0),
+											annexC(1)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DVB-C J.83 Annex"
+										::={dvbcPara 5}
+
+--dvbsPara
+Dfrequency					OBJECT-TYPE
+										SYNTAX INTEGER
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DVB-S downlink frequency"
+										::={dvbsPara 1}
+										
+Lfrequency					OBJECT-TYPE
+										SYNTAX INTEGER
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DVB-S local frequency"
+										::={dvbsPara 2}
+										
+dvbsSymbolRate			OBJECT-TYPE
+										SYNTAX INTEGER
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DVB-S symbole rate"
+										::={dvbsPara 3}
+										
+polarization				OBJECT-TYPE
+										SYNTAX INTEGER
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DVB-S polarization"
+										::={dvbsPara 4}
+										
+dvbs22K							OBJECT-TYPE
+										SYNTAX INTEGER
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DVB-S 22K"
+										::={dvbsPara 5}
+
+--ds3e3Para
+inputSource					OBJECT-TYPE
+										SYNTAX INTEGER{
+											e3(0),
+											ds3(1)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DE200 codecoder DS3/E3 input select"
+										::={ds3e3Para 1}
+										
+autoDitect					OBJECT-TYPE
+										SYNTAX INTEGER{
+											manual(0),
+											auto(1)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DE200 DS3 input modo auto"
+										::={ds3e3Para 2}
+										
+msbfType						OBJECT-TYPE
+										SYNTAX INTEGER{
+											msbfoff(0),
+											msbfon(1)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DE200 MSBF mode select"
+										::={ds3e3Para 3}
+										
+rsType							OBJECT-TYPE
+										SYNTAX INTEGER{
+											rsoff(0),
+											rson(1)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DE200 RS mode select"
+										::={ds3e3Para 4}
+										
+frameType						OBJECT-TYPE
+										SYNTAX INTEGER{
+											frameoff(0),
+											frameon(1)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "DE200 FRAME mode select"
+										::={ds3e3Para 5}											
+
+
+--restartEnable
+restartEnable				OBJECT-TYPE
+										SYNTAX INTEGER{
+											normal(0),
+											restart(1)
+										}
+										ACCESS read-write
+										STATUS current
+										DESCRIPTION "restart flag"
+										::={clpDevInfo 13}
+END

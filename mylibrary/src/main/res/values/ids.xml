@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="threadbegain" type="id"/>
+    <item name="threadend" type="id"/>
+    <item name="Nullerror" type="id"/>
+    <item name="iptext0" type="id"/>
+    <item name="iptext1" type="id"/>
+    <item name="iptext2" type="id"/>
+    <item name="iptext3" type="id"/>
+    <item name="update" type="id"/>
+</resources>

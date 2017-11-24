@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:textSize="20sp"
+            android:layout_weight="0.4"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="date"
+            android:id="@+id/trap_type" />
+        <TextView
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:textSize="20sp"
+            android:layout_weight="0.6"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="equipment IP"
+            android:id="@+id/host" />
+    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:clickable="true"
+        android:id="@+id/trapMessage">
+    </ListView>
+
+    <TableRow
+        android:layout_weight="0.2"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp">
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/custom_button"
+            android:text="begin"
+            android:textSize="@dimen/activity_horizontal_margin"
+            android:layout_weight="0.5"
+            android:id="@+id/trap_begin"
+            android:layout_width="0dp"
+            android:layout_height="40dp" />
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/custom_button"
+            android:layout_weight="0.5"
+            android:text="stop"
+            android:textSize="@dimen/activity_horizontal_margin"
+            android:id="@+id/trap_end"
+            android:layout_width="0dp"
+            android:layout_height="40dp" />
+    </TableRow>
+    <Button
+        android:text="clear and stop"
+        android:id="@+id/clear"
+        android:background="@drawable/custom_delete"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

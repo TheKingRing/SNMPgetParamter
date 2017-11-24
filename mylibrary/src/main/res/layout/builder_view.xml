@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="240dp"
+    android:background="@color/DarkGray">
+    <TextView
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:text="强制解码设置"
+        android:gravity="center"
+        />
+    <TableRow
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_weight="0.4"
+            android:textStyle="bold"
+            android:textColor="@color/win8_blue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="PCR PID:"/>
+        <EditText
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:inputType="number"
+            android:hint="PCR PID"
+            android:layout_weight="0.6"
+            android:background="@drawable/custom_edittext"
+            android:id="@+id/PCR_PID1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_weight="0.4"
+            android:textStyle="bold"
+            android:textColor="@color/win8_blue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Video PID:"/>
+        <EditText
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:inputType="number"
+            android:hint="Video PID"
+            android:layout_weight="0.6"
+            android:background="@drawable/custom_edittext"
+            android:id="@+id/Video_PID1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_weight="0.4"
+            android:textStyle="bold"
+            android:textColor="@color/win8_blue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Audio PID:"/>
+        <EditText
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:inputType="number"
+            android:hint="Audio PID"
+            android:layout_weight="0.6"
+            android:background="@drawable/custom_edittext"
+            android:id="@+id/Audio_PID1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </TableRow>
+    <TableRow>
+        <Button
+           android:layout_margin="5dp"
+            android:background="@drawable/custom_button"
+            android:text="保存"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_weight="0.5"
+            android:id="@+id/builderbt1"
+            android:layout_width="0dp"
+            android:layout_height="40dp" />
+        <Button
+           android:layout_margin="5dp"
+            android:background="@drawable/custom_button"
+            android:layout_weight="0.5"
+            android:text="取消"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:id="@+id/builderbt2"
+            android:layout_width="0dp"
+            android:layout_height="40dp" />
+    </TableRow>
+
+</TableLayout>

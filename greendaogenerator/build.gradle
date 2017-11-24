@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/greendao-generator-2.1.0.jar')
+    compile files('libs/freemarker-gae-2.3.23.jar')
+    compile files('libs/grammatica-bin-1.4.jar')
+    compile files('libs/mibble-parser-2.5.jar')
+    compile files('libs/mibble-parser-2.9.3.jar')
+    compile files('libs/snmp4_13.jar')
+    compile files('libs/mibble-mibs-2.9.3.jar')
+}
